@@ -1,3 +1,20 @@
+:root {
+  --blue: #82A7A6;
+  --dark: #231F20;
+  --grey: #383334;
+  --button-red: #785964;
+  --state-todo: #E5E5E5;
+  --state-progress: #CA8357;
+  --state-complete: #B0D4A3;
+  --priority: #E1564D;
+  --faded-white: rgba(255, 255, 255, 0.61);
+  --shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+  --xl-text: 30px;
+  --large-text: 20px;
+  --regular-text: 12px;
+  --small-text: 10px;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +22,18 @@ body {
 
 a {
   color: #00B7FF;
+}
+
+#nav {
+  width: 14rem;
+  height: 92%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  overflow-x: hidden;
+  padding: 2rem;
+  background-color: var(--blue);
 }
