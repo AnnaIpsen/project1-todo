@@ -1,4 +1,5 @@
 :root {
+  --white: #ffffff;
   --blue: #82A7A6;
   --dark: #231F20;
   --grey: #383334;
@@ -13,22 +14,24 @@
   --large-text: 20px;
   --regular-text: 12px;
   --small-text: 10px;
+  --underline: 1px solid var(--button-red);
 }
-
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 2rem 2rem 2rem 22rem;
+  font-family: "Playfair Display", sans-serif;
+  background-color: var(--dark);
 }
-
-a {
-  color: #00B7FF;
-}
+h1{font-size: var(--xl-text); text-transform: uppercase; font-weight: bold; color: var(--white); letter-spacing: .1rem}
+h2{font-size: var(--large-text); text-transform: uppercase; font-weight: bold; letter-spacing: .1rem}
+h3{font-size: var(--regular-text); text-transform: uppercase; font-weight: normal}
+p {font-size: var(--regular-text); color: var(--white)}
 
 #nav {
   width: 14rem;
   height: 92%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -37,3 +40,38 @@ a {
   padding: 2rem;
   background-color: var(--blue);
 }
+
+#nav hr {
+  margin: 0;
+  border: var(--underline);
+  width: 100%;
+}
+
+#nav .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  background-color: var(--grey);
+  margin-bottom: 4rem;
+}
+
+#nav .logo img {
+  width: 7rem;
+  height: auto;
+}
+
+#userInfo .userLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: var(--button-red);
+}
+
+#nav ul {list-style: none;}
+#nav ul li {cursor: pointer}
