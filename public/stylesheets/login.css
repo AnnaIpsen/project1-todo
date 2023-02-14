@@ -1,0 +1,63 @@
+:root {
+    --white: #ffffff;
+    --blue: #82A7A6;
+    --dark: #231F20;
+    --button-red: #785964;
+    --faded-white: rgba(255, 255, 255, 0.61);
+    --xl-text: 30px;
+    --large-text: 20px;
+    --regular-text: 12px;
+    --small-text: 10px;
+}
+
+body {
+    padding: 2rem 2rem 2rem 70rem;
+    background-color: var(--dark);
+}
+h1 {
+    font-size: var(--xl-text);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--white);
+    letter-spacing: .1rem
+}
+h2 {
+    font-size: var(--large-text);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--white);
+    letter-spacing: .1rem
+}
+h3 {
+    font-size: var(--regular-text);
+    text-transform: uppercase;
+    font-weight: normal
+}
+p {font-size: var(--regular-text); color: var(--white)}
+
+.logoWrapper {
+    width: 60rem;
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    overflow-x: hidden;
+    padding: 2rem;
+    background-color: var(--blue);
+  }
+
+label {
+    color:white;
+    text-align: left;
+  }
+  
+  input {
+    width: 350px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
