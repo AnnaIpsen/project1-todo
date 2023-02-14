@@ -21,9 +21,24 @@ body {
   font-family: "Playfair Display", sans-serif;
   background-color: var(--dark);
 }
-h1{font-size: var(--xl-text); text-transform: uppercase; font-weight: bold; color: var(--white); letter-spacing: .1rem}
-h2{font-size: var(--large-text); text-transform: uppercase; font-weight: bold; letter-spacing: .1rem}
-h3{font-size: var(--regular-text); text-transform: uppercase; font-weight: normal}
+h1 {
+  font-size: var(--xl-text);
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--white);
+  letter-spacing: .1rem
+}
+h2 {
+  font-size: var(--large-text);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1rem
+}
+h3 {
+  font-size: var(--regular-text);
+  text-transform: uppercase;
+  font-weight: normal
+}
 p {font-size: var(--regular-text); color: var(--white)}
 
 #nav {
@@ -41,7 +56,7 @@ p {font-size: var(--regular-text); color: var(--white)}
   background-color: var(--blue);
 }
 
-#nav hr {
+hr {
   margin: 0;
   border: var(--underline);
   width: 100%;
