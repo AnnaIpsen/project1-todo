@@ -1,0 +1,20 @@
+doctype html
+
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/login.css')
+
+    body
+        div(class='logoWrapper')
+            img(src='../images/logo.png' alt='login-img')
+        div
+            div(class='loginWrapper')
+                h1(class='h1 welcome') WELCOME TO TURTUR-DO!
+                form(action="/login" class="loginForm")
+                    label(class='loginLabel') LOGIN
+                    input(id='loginUsername' class="inputForm")
+                    input(id='loginPassword' class="inputForm")
+                    p Not a member? No worries - Sign up here
+                    button(id='loginBtn' class='h1') login
+
+

@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Mono:ital,wght@1,300&display=swap');
+
+
 :root {
     --white: #ffffff;
     --blue: #82A7A6;
@@ -13,6 +17,7 @@
 body {
     padding: 2rem 2rem 2rem 70rem;
     background-color: var(--dark);
+
 }
 h1 {
     font-size: var(--xl-text);
@@ -61,3 +66,37 @@ label {
     border-radius: 10px;
   }
 
+  .inputForm{
+      width: 265px;
+      height: 40px;
+      border-radius: 10px;
+      margin: 15px 0px;
+  }
+
+  .loginWrapper{
+    max-width: 100%;
+    margin-left: -40px;
+      margin-top: 170px;
+      font-family: 'Playfair Display', serif;
+
+  }
+
+  #loginBtn {
+    float: right;
+      width: 140px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: var(--button-red);
+
+
+  }
+
+  .welcome {
+    text-align: center;
+      margin-bottom: 85px;
+      font-weight: 600;
+  }
+
+  .loginLabel{
+      font-weight: bold;
+  }
