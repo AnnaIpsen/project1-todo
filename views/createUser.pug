@@ -6,9 +6,7 @@ html
     link(rel='stylesheet', href='/stylesheets/login.css')
   body
   div(class='logoWrapper')
-    div(class='bgBox')
-        div(class='overlay')
-            img(src="../images/logo.png")
+    img(src="../images/logo.png")
 
   div(class='formWrapper')   
     h1 Welcome to <br> TURTUR-DO!
@@ -16,7 +14,7 @@ html
     h2 Create user   
 
     form(action="/createUser", method="post", class='createUser')     
-    label(for="email") Email* 
+    label(for="email") E-mail* 
         input(type="text", id='email', name="email")
         label(for="username") Username* 
         input(type="text", id='username', name="username")
@@ -25,4 +23,4 @@ html
         label(for="confirmPass") Confirm password* 
         input(type="text", id='confirmPass', name="confirmPass")
     div(class='divBtn') 
-        button(id='createBtn') Create
+        button(id='createBtn') CREATE
