@@ -4,6 +4,9 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/login.css')
+    //- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    script( defer src="/javascript/script.js")
+    
   body
   div(class='logoWrapper')
     img(src="../images/logo.png")
@@ -12,15 +15,17 @@ html
     h1 Welcome to <br> TURTUR-DO!
 
     h2 Create user   
-
-    form(action="/createUser", method="post", class='createUser')     
-    label(for="email") E-mail* 
+    //- alert(role="alert", id="errorMessage", style="display: none")
+    //-   ul(id="errors")
+    form(action="/createUser/create", method="post", class='createUser')     
+      label(for="email") E-mail* 
         input(type="text", id='email', name="email")
         label(for="username") Username* 
         input(type="text", id='username', name="username")
         label(for="password") Password* 
-        input(type="text", id='password', name="password")
+        input(type="password", id='password', name="password")
         label(for="confirmPass") Confirm password* 
-        input(type="text", id='confirmPass', name="confirmPass")
-    div(class='divBtn') 
-        button(id='createBtn') CREATE
+        input(type="password", id='confirmPass', name="confirmPass")
+        input(type='submit', value='CREATE', id='createBtn')
+
+
