@@ -12,9 +12,9 @@ html
                 h1(class='h1 welcome') WELCOME TO TURTUR-DO!
                 form(action="/login" class="loginForm")
                     label(class='loginLabel') LOGIN
-                    input(id='loginUsername' class="inputForm")
-                    input(id='loginPassword' class="inputForm")
-                    p Not a member? No worries - Sign up here
-                    button(id='loginBtn' class='h1') login
+                    input(id='loginUsername' class="inputLogin")
+                    input(id='loginPassword' class="inputLogin")
+                    p(class='h3 signUpTxt') Not a member? No worries - <a href='../routes/createUser.js' class='linkToCreate'> Sign up here </a>
+                    button(id='loginBtn' class='h2') login
 
 

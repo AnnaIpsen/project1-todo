@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Mono:ital,wght@1,300&display=swap');
 
-
 :root {
     --white: #ffffff;
     --blue: #82A7A6;
@@ -19,6 +18,7 @@ body {
     background-color: var(--dark);
 
 }
+
 h1 {
     font-size: var(--xl-text);
     text-transform: uppercase;
@@ -38,7 +38,9 @@ h3 {
     text-transform: uppercase;
     font-weight: normal
 }
-p {font-size: var(--regular-text); color: var(--white)}
+p {
+    font-size: var(--regular-text); color: var(--white);
+}
 
 .logoWrapper {
     width: 60rem;
@@ -66,7 +68,7 @@ label {
     border-radius: 10px;
   }
 
-  .inputForm{
+  .inputLogin{
       width: 265px;
       height: 40px;
       border-radius: 10px;
@@ -87,7 +89,10 @@ label {
       height: 40px;
       border-radius: 10px;
       background-color: var(--button-red);
-
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+      color: white;
+      cursor: pointer;
 
   }
 
@@ -97,6 +102,11 @@ label {
       font-weight: 600;
   }
 
-  .loginLabel{
-      font-weight: bold;
+  .linkToCreate{
+    text-decoration-line: underline;
+      text-decoration-color: white;
+      color: white;
   }
+
+
+
