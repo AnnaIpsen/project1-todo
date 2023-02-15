@@ -3,7 +3,7 @@ extends layout
 block content
   section(class="taskListHeader")
     h1= title
-    div(class="btn" id="addNewTask")
+    button(class="btn" id="addNewTask")
       img(src="../images/icons/plus.svg")
       p new task
   hr
@@ -18,9 +18,15 @@ block content
         section
           section(class="cardHeader")
             h4 Taskname
-            section(class="todo changeState")
-              p to do
-              img(src="../images/icons/arrow_dark.svg")
+            div(class="dropdownStateCard")
+              section(class="todo changeState" id='openCardStateDropdown')
+                p to do
+                img(src="../images/icons/arrow_dark.svg")
+              section(class="dropdownContent cardState todo" id="cardStateDropdown")
+                p(class="todo dropdownItem") to do
+                p(class="inProgress dropdownItem") in progress
+                p(class="complete dropdownItem") complete
+
           p(class="description") description here
         div(class="dueDate")
           img(src="../images/icons/flag_white.svg")
@@ -83,10 +89,10 @@ block content
             label(for="dueDate") Due date:
             input(type="date" name="dueDate")
         div(class="dropdownState")
-          section(class="complete changeState")
+          section(class="complete changeState" id="openTaskStateDropdown")
             p complete
             img(src="../images/icons/arrow_dark.svg")
-          section(class="dropdownContent complete")
+          section(class="dropdownContent complete" id="taskStateDropdown")
             p(class="todo dropdownItem") to do
             p(class="inProgress dropdownItem") in progress
             p(class="complete dropdownItem") complete
@@ -113,10 +119,10 @@ block content
             input(type="date" name="dueDate")
 
         div(class="dropdownStateNewTask")
-          section(class="complete changeState newTask")
+          section(class="complete changeState newTask" id='openNewTaskStateDropdown')
             p complete
             img(src="../images/icons/arrow_dark.svg")
-          section(class="dropdownContent complete")
+          section(class="dropdownContent complete" id="newTaskStateDropdown")
             p(class="todo dropdownItem") to do
             p(class="inProgress dropdownItem") in progress
             p(class="complete dropdownItem") complete

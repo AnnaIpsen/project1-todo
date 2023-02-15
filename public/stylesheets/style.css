@@ -113,6 +113,16 @@ hr {
   gap: .5rem;
   align-items: center;
 }
+.contentNewList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.listName {
+  width: 15rem;
+}
 
 .wrapper {
   width: 100%;
@@ -172,7 +182,7 @@ hr {
 .changeState {
   display: flex;
   gap: 1rem;
-  width: fit-content;
+  min-width: 5rem;
   height: 1.5rem;
   padding: 0 .5rem;
   border-radius: 5px;
@@ -193,7 +203,7 @@ hr {
 }
 .dueDate p {margin: 0;}
 
-#taskModalWrapper {
+#taskModalWrapper, #newTaskModalWrapper, #newListModalWrapper {
   display: none;
   position: fixed;
   top: 0;
@@ -206,7 +216,7 @@ hr {
   justify-content: center;
 }
 
-.taskModal {
+.taskModal, .newListModal {
   background-color: var(--dark);
   width: fit-content;
   height: fit-content;
@@ -239,29 +249,32 @@ hr {
 }
 .priority img {width: 2em; height: 2rem}
 
-.date, .description, .taskName {
+.date, .description, .taskName, .listName {
   display: flex;
   flex-direction: column;
 }
-.date label, .description label, .taskName label { color: var(--faded-white); margin-bottom: .5rem}
+.date label, .description label, .taskName label, .listName label { color: var(--faded-white); margin-bottom: .5rem}
 
-.date input, .description textarea, .taskName input {
+.date input, .description textarea, .taskName input, .listName input {
   background-color: var(--dark);
   border: 1px solid var(--button-red);
   padding: 10px;
 }
-.date input, .taskName input { border-radius: 5px;}
+.date input, .taskName input, .listName input { border-radius: 5px;}
 .description textarea { border-radius: 10px;}
 
-.dropdownState, .dropdownStateNewTask {position: relative; display: inline-block;width: fit-content; padding: 0;}
+.dropdownState, .dropdownStateNewTask, .cardStateDropdown {position: relative; display: inline-block;width: fit-content; padding: 0;}
 .dropdownContent {
   display: none;
   position: absolute;
   z-index: 1;
   width: 100%;
   margin: 0;
-  border-radius: 10px;
+  border-radius: 5px;
+}
 
+.dropdownContent.cardState {
+  width: 6rem;
 }
 .dropdownItem {
   height: 1.5rem;
@@ -287,24 +300,11 @@ hr {
   width: fit-content;
   padding: .5rem 2rem;
   color: var(--white);
-  height: fit-content;
+  min-height: 2rem;
+  max-height: 2rem;
   font-family: "Playfair Display", sans-serif;
   text-transform: uppercase;
 }
-
-#newTaskModalWrapper {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 20;
-  background-color: rgba(0, 0, 0, 0.7);
-  align-items: center;
-  justify-content: center;
-}
-
 .namePriorityWrapper {justify-content: space-between; align-items: center}
 .taskName {width: 19rem}
 .dropdownStateNewTask, .newDate {width: 12rem}
