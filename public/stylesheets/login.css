@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Mono:ital,wght@1,300&display=swap');
+
 :root {
     --white: #ffffff;
     --blue: #82A7A6;
@@ -14,9 +17,7 @@
 body {
     padding: 2rem 2rem 2rem 70rem;
     background-color: var(--dark);
-}
-h1,h2,h3,p,button {
-    font-family: "Playfair Display", sans-serif !important;
+
 }
 h1 {
     font-size: var(--xl-text);
@@ -41,7 +42,9 @@ h3 {
     text-transform: uppercase;
     font-weight: normal
 }
-p {font-size: var(--regular-text); color: var(--white)}
+p {
+    font-size: var(--regular-text); color: var(--white);
+}
 
 .logoWrapper {
     width: 60rem;
@@ -74,6 +77,7 @@ label {
     border-radius: 10px;
   }
 
+
   #createBtn {
     margin-top: 10px;
     background-color: var(--button-red);
@@ -86,5 +90,49 @@ label {
     width: 140px;
     height: 40px;
   }
+
+
+
+  .inputLogin{
+      width: 265px;
+      height: 40px;
+      border-radius: 10px;
+      margin: 15px 0px;
+  }
+
+  .loginWrapper{
+    max-width: 100%;
+    margin-left: -40px;
+      margin-top: 170px;
+      font-family: 'Playfair Display', serif;
+
+  }
+
+  #loginBtn {
+    float: right;
+      width: 140px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: var(--button-red);
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+      color: white;
+      cursor: pointer;
+
+  }
+
+  .welcome {
+    text-align: center;
+      margin-bottom: 85px;
+      font-weight: 600;
+  }
+
+  .linkToCreate{
+    text-decoration-line: underline;
+      text-decoration-color: white;
+      color: white;
+  }
+
+
 
 
