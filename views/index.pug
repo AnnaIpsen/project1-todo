@@ -1,74 +1,125 @@
 extends layout
 
 block content
-    #task_list
+  section(class="taskListHeader")
     h1= title
-    hr
-    section(class="wrapper")
-        section(class="todosColumn")
-            div(class="stateBox todo")
-                h2 TO DO
-                div(class="counter")
-                    p 4
-                each task in task_list
-                    if task.TaskState === "ToDo"
-                        div(class="todoCard")
-                            section
-                                section(class="cardHeader")
-                                    h4 #{task.TaskName}
-                                    section(class="todo changeState")
-                                        p #{task.TaskState}
-                                        img(src="../images/icons/arrow_dark.svg")
-                                p(class="description") #{task.TaskDescription}
-                            div(class="dueDate")
-                                if task.TaskPriority === 1
-                                    img(src="../images/icons/flag_red.svg")
-                                    p due date
-                                else
-                                    img(src="../images/icons/flag_white.svg")
-                                    p due date
-            section(class="todosColumn")
-                div(class="stateBox inProgress")
-                    h2 In progress
-                    div(class="counter")
-                        p 4
-                each task in task_list
-                    if task.TaskState === "In Progress"
-                        div(class="todoCard")
-                            section
-                                section(class="cardHeader")
-                                    h4 #{task.TaskName}
-                                    section(class="inProgress changeState")
-                                        p #{task.TaskState}
-                                        img(src="../images/icons/arrow_dark.svg")
-                                p(class="description") #{task.TaskDescription}
-                            div(class="dueDate")
-                                if task.TaskPriority === 1
-                                    img(src="../images/icons/flag_red.svg")
-                                    p due date
-                                else
-                                    img(src="../images/icons/flag_white.svg")
-                                    p due date
+    div(class="btn" id="addNewTask")
+      img(src="../images/icons/plus.svg")
+      p new task
+  hr
 
-            section(class="todosColumn")
-                div(class="stateBox complete")
-                    h2 complete
-                    div(class="counter")
-                        p 4
-                each task in task_list
-                    if task.TaskState === "Complete"
-                        div(class="todoCard")
-                            section
-                                section(class="cardHeader")
-                                    h4 #{task.TaskName}
-                                    section(class="complete changeState")
-                                        p #{task.TaskState}
-                                        img(src="../images/icons/arrow_dark.svg")
-                                p(class="description") #{task.TaskDescription}
-                            div(class="dueDate")
-                                if task.TaskPriority === 1
-                                    img(src="../images/icons/flag_red.svg")
-                                    p due date
-                                else
-                                    img(src="../images/icons/flag_white.svg")
-                                    p due date
+  section(class="wrapper")
+    section(class="todosColumn")
+      div(class="stateBox todo")
+        h2 TO DO
+        div(class="counter")
+          p 4
+      each task in task_list
+          if task.TaskState === "ToDo"
+              div(class="todoCard" id="openModal")
+                section
+                  section(class="cardHeader")
+                    h4 #{task.TaskName}
+                    section(class="todo changeState")
+                      p #{task.TaskState}
+                      img(src="../images/icons/arrow_dark.svg")
+                  p(class="description") #{task.TaskDescription}
+                div(class="dueDate")
+                  img(src="../images/icons/flag_white.svg")
+                  p due date
+
+
+    section(class="todosColumn")
+      div(class="stateBox inProgress")
+        h2 In progress
+        div(class="counter")
+          p 4
+      each task in task_list
+          if task.TaskState === "In Progress"
+              div(class="todoCard" id="openModal")
+                  section
+                      section(class="cardHeader")
+                          h4 #{task.TaskName}
+                          section(class="todo changeState")
+                              p #{task.TaskState}
+                              img(src="../images/icons/arrow_dark.svg")
+                      p(class="description") #{task.TaskDescription}
+                  div(class="dueDate")
+                      img(src="../images/icons/flag_white.svg")
+                      p due date
+
+
+    section(class="todosColumn")
+      div(class="stateBox complete")
+        h2 complete
+        div(class="counter")
+          p 4
+      each task in task_list
+          if task.TaskState === "Complete"
+              div(class="todoCard" id="openModal")
+                  section
+                      section(class="cardHeader")
+                          h4 #{task.TaskName}
+                          section(class="todo changeState")
+                              p #{task.TaskState}
+                              img(src="../images/icons/arrow_dark.svg")
+                      p(class="description") #{task.TaskDescription}
+                  div(class="dueDate")
+                      img(src="../images/icons/flag_white.svg")
+                      p due date
+
+  section(id="taskModalWrapper")
+    section(class="taskModal")
+      h1 taskname
+        hr
+      section(class="dueDateRow")
+        section(class="dueDatePriorityWrapper")
+          div(class="priority")
+            img(src="../images/icons/flag_red.svg")
+          form(class="date")
+            label(for="dueDate") Due date:
+            input(type="date" name="dueDate")
+        div(class="dropdownState")
+          section(class="complete changeState")
+            p complete
+            img(src="../images/icons/arrow_dark.svg")
+          section(class="dropdownContent complete")
+            p(class="todo dropdownItem") to do
+            p(class="inProgress dropdownItem") in progress
+            p(class="complete dropdownItem") complete
+      form(class="description")
+        label(for="description") Description:
+        textarea(name="description" rows="20" cols="50")
+      section(class="submitarea")
+        button(class="btn" id="updateTask") Save Task
+
+  section(id="newTaskModalWrapper")
+    section(class="taskModal")
+      h1 Create new task
+        hr
+      section(class="namePriorityWrapper")
+        form(class="taskName")
+          label(for="name") Task name
+          input(name="name" type="text")
+        div(class="priority")
+          img(src="../images/icons/flag_white.svg")
+      section(class="dateStateRow")
+        section(class="dueDateWrapper")
+          form(class="date newDate")
+            label(for="dueDate") Due date:
+            input(type="date" name="dueDate")
+
+        div(class="dropdownStateNewTask")
+          section(class="complete changeState newTask")
+            p complete
+            img(src="../images/icons/arrow_dark.svg")
+          section(class="dropdownContent complete")
+            p(class="todo dropdownItem") to do
+            p(class="inProgress dropdownItem") in progress
+            p(class="complete dropdownItem") complete
+      form(class="description")
+        label(for="description") Description:
+        textarea(name="description" rows="20" cols="50")
+      section(class="submitarea")
+        button(class="btn" id="addTask") add task
+
