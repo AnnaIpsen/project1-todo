@@ -12,7 +12,7 @@ html
   div(class='formWrapper')   
     h1 Welcome to <br> TURTUR-DO!
 
-    h2 Create user   
+    h2(class="createH2") Create user   
     form(action="/createUser/create", method="post", class='createUser')     
       label(for="email") E-mail* 
         input(type="text", id='email', name="email", placeholder='Insert valid email')

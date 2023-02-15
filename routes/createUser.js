@@ -24,7 +24,7 @@ router.post("/create",
     let username = req.body.username;
     let password = req.body.password;
 
-    let salt = crypto.lib.WordArray.random(10).toString();
+    let salt = crypto.lib.WordArray.random(128 / 8).toString();
 
     let hashedUsername = crypto.SHA256(username + salt).toString();
     let hashedPassword = crypto.SHA256(password + salt).toString();
