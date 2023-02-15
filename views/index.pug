@@ -6,8 +6,63 @@ block content
 
   section(class="wrapper")
     section(class="todosColumn")
-      div(class="stateBox")
+      div(class="stateBox todo")
         h2 TO DO
         div(class="counter")
           p 4
       div(class="todoCard")
+        section
+          section(class="cardHeader")
+            h4 Taskname
+            section(class="todo changeState")
+              p to do
+              img(src="../images/icons/arrow_dark.svg")
+          p(class="description") description here
+        div(class="dueDate")
+          img(src="../images/icons/flag_white.svg")
+          p due date
+      div(class="todoCard")
+        section
+          section(class="cardHeader")
+            h4 Taskname
+            section(class="todo changeState")
+              p to do
+              img(src="../images/icons/arrow_dark.svg")
+          p(class="description") description here
+        div(class="dueDate")
+          img(src="../images/icons/flag_red.svg")
+          p due date
+
+    section(class="todosColumn")
+      div(class="stateBox inProgress")
+        h2 In progress
+        div(class="counter")
+          p 4
+      div(class="todoCard")
+        section
+          section(class="cardHeader")
+            h4 Taskname
+            section(class="inProgress changeState")
+              p in progress
+              img(src="../images/icons/arrow_dark.svg")
+          p(class="description") description here
+        div(class="dueDate")
+          img(src="../images/icons/flag_red.svg")
+          p due date
+
+    section(class="todosColumn")
+      div(class="stateBox complete")
+        h2 complete
+        div(class="counter")
+          p 4
+      div(class="todoCard")
+        section
+          section(class="cardHeader")
+            h4 Taskname
+            section(class="complete changeState")
+              p complete
+              img(src="../images/icons/arrow_dark.svg")
+          p(class="description") description here
+        div(class="dueDate")
+          img(src="../images/icons/flag_red.svg")
+          p due date
