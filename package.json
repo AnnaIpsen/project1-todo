@@ -8,13 +8,13 @@
     "test": "DEBUG=project1-todo:* nodemon ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cookie-parser": "~1.4.4",
     "crypto-js": "^4.1.1",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
-    "express": "~4.16.1",
-    "express-validator": "^6.14.3",
     "express": "^4.18.2",
+    "express-validator": "^6.14.3",
     "http-errors": "~1.6.3",
     "jquery": "^3.6.3",
     "mongoose": "^6.9.1",

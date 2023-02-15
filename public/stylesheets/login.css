@@ -15,6 +15,7 @@
 }
 
 body {
+  margin: 0px;
     padding: 2rem 2rem 2rem 70rem;
     background-color: var(--dark);
 
@@ -80,6 +81,7 @@ label {
 
   #createBtn {
     margin-top: 10px;
+    margin-bottom: 0px;
     background-color: var(--button-red);
     margin-left: 220px;
     font-size: 16px;
