@@ -1,4 +1,3 @@
-const Task = require("../models/task")
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
@@ -33,6 +32,14 @@ exports.task_create_get = (req, res) => {
 
 // Handle task create on POST.
 exports.task_create_post = (req, res) => {
+    connection.connect();
+    console.log("Creating new task")
+    //Query to insert task into database
+    let newTaskQuery = 'INSERT INTO '
+
+    connection.quety
+
+
     res.send("NOT IMPLEMENTED: task create POST");
 };
 

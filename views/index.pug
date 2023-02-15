@@ -65,8 +65,12 @@ block content
                               img(src="../images/icons/arrow_dark.svg")
                       p(class="description") #{task.TaskDescription}
                   div(class="dueDate")
-                      img(src="../images/icons/flag_white.svg")
-                      p due date
+                      if task.TaskPriority === 1
+                          img(src="../images/icons/flag_red.svg")
+                          p due date
+                      else
+                          img(src="../images/icons/flag_white.svg")
+                          p due date
 
   section(id="taskModalWrapper")
     section(class="taskModal")
@@ -123,3 +127,17 @@ block content
       section(class="submitarea")
         button(class="btn" id="addTask") add task
 
+
+
+
+            app.post('/user',
+                body('username').isEmail(),
+                body('password').isLength({ min: 5 }).,
+                body('password').isEmail(),
+
+(req, res) => {
+// Finds the validation errors in this request and wraps them in an object with handy functions
+const errors = validationResult(req);
+if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+}
