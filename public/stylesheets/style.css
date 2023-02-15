@@ -27,15 +27,16 @@ h1 {
   text-transform: uppercase;
   font-weight: bold;
   color: var(--white);
-  letter-spacing: .1rem
+  letter-spacing: .1rem;
+  margin: 0;
 }
-h2 {
+h2{
   font-size: var(--large-text);
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: .1rem
 }
-h3 {
+h3, button {
   font-size: var(--regular-text);
   text-transform: uppercase;
   font-weight: normal
@@ -46,7 +47,7 @@ h4 {
   color: var(--white);
   margin: 0;
 }
-p {font-size: var(--regular-text); color: var(--white)}
+p, label, input, textarea {font-size: var(--regular-text); color: var(--white)}
 
 #nav {
   width: 14rem;
@@ -64,7 +65,7 @@ p {font-size: var(--regular-text); color: var(--white)}
 }
 
 hr {
-  margin: 0;
+  margin: .5rem 0;
   border: var(--underline);
   width: 100%;
 }
@@ -97,6 +98,21 @@ hr {
 
 #nav ul {list-style: none;}
 #nav ul li {cursor: pointer}
+
+.taskListHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#addNewTask, #addNewList {
+  max-height: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: center;
+}
 
 .wrapper {
   width: 100%;
@@ -162,6 +178,7 @@ hr {
   border-radius: 5px;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
 }
 
 .changeState p {color: var(--dark); font-size: var(--small-text); margin: 0; text-transform: uppercase}
@@ -175,3 +192,126 @@ hr {
   align-items: center;
 }
 .dueDate p {margin: 0;}
+
+#taskModalWrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.taskModal {
+  background-color: var(--dark);
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dueDateRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.dueDateRow .dueDatePriorityWrapper, .namePriorityWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.priority {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1px dashed var(--button-red);
+}
+.priority img {width: 2em; height: 2rem}
+
+.date, .description, .taskName {
+  display: flex;
+  flex-direction: column;
+}
+.date label, .description label, .taskName label { color: var(--faded-white); margin-bottom: .5rem}
+
+.date input, .description textarea, .taskName input {
+  background-color: var(--dark);
+  border: 1px solid var(--button-red);
+  padding: 10px;
+}
+.date input, .taskName input { border-radius: 5px;}
+.description textarea { border-radius: 10px;}
+
+.dropdownState, .dropdownStateNewTask {position: relative; display: inline-block;width: fit-content; padding: 0;}
+.dropdownContent {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  border-radius: 10px;
+
+}
+.dropdownItem {
+  height: 1.5rem;
+  padding: 0 .5rem;
+  border-radius: 5px;
+  color: var(--dark);
+  font-size: var(--small-text);
+  margin: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.submitarea {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.btn {
+  background-color: var(--button-red);
+  border: none;
+  border-radius: 10px;
+  width: fit-content;
+  padding: .5rem 2rem;
+  color: var(--white);
+  height: fit-content;
+  font-family: "Playfair Display", sans-serif;
+  text-transform: uppercase;
+}
+
+#newTaskModalWrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.namePriorityWrapper {justify-content: space-between; align-items: center}
+.taskName {width: 19rem}
+.dropdownStateNewTask, .newDate {width: 12rem}
+.newTask {box-sizing: border-box; width: 100%; padding: 10px; height: fit-content}
+.dateStateRow {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end
+}

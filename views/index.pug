@@ -1,7 +1,11 @@
 extends layout
 
 block content
-  h1= title
+  section(class="taskListHeader")
+    h1= title
+    div(class="btn" id="addNewTask")
+      img(src="../images/icons/plus.svg")
+      p new task
   hr
 
   section(class="wrapper")
@@ -10,7 +14,7 @@ block content
         h2 TO DO
         div(class="counter")
           p 4
-      div(class="todoCard")
+      div(class="todoCard" id="openModal")
         section
           section(class="cardHeader")
             h4 Taskname
@@ -66,3 +70,59 @@ block content
         div(class="dueDate")
           img(src="../images/icons/flag_red.svg")
           p due date
+
+  section(id="taskModalWrapper")
+    section(class="taskModal")
+      h1 taskname
+        hr
+      section(class="dueDateRow")
+        section(class="dueDatePriorityWrapper")
+          div(class="priority")
+            img(src="../images/icons/flag_red.svg")
+          form(class="date")
+            label(for="dueDate") Due date:
+            input(type="date" name="dueDate")
+        div(class="dropdownState")
+          section(class="complete changeState")
+            p complete
+            img(src="../images/icons/arrow_dark.svg")
+          section(class="dropdownContent complete")
+            p(class="todo dropdownItem") to do
+            p(class="inProgress dropdownItem") in progress
+            p(class="complete dropdownItem") complete
+      form(class="description")
+        label(for="description") Description:
+        textarea(name="description" rows="20" cols="50")
+      section(class="submitarea")
+        button(class="btn" id="updateTask") Save Task
+
+  section(id="newTaskModalWrapper")
+    section(class="taskModal")
+      h1 Create new task
+        hr
+      section(class="namePriorityWrapper")
+        form(class="taskName")
+          label(for="name") Task name
+          input(name="name" type="text")
+        div(class="priority")
+          img(src="../images/icons/flag_white.svg")
+      section(class="dateStateRow")
+        section(class="dueDateWrapper")
+          form(class="date newDate")
+            label(for="dueDate") Due date:
+            input(type="date" name="dueDate")
+
+        div(class="dropdownStateNewTask")
+          section(class="complete changeState newTask")
+            p complete
+            img(src="../images/icons/arrow_dark.svg")
+          section(class="dropdownContent complete")
+            p(class="todo dropdownItem") to do
+            p(class="inProgress dropdownItem") in progress
+            p(class="complete dropdownItem") complete
+      form(class="description")
+        label(for="description") Description:
+        textarea(name="description" rows="20" cols="50")
+      section(class="submitarea")
+        button(class="btn" id="addTask") add task
+
