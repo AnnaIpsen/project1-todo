@@ -20,7 +20,7 @@ exports.user_create_post = (req, res) => {
     //Query to insert all user data into Database
     let userCreateQuery = `INSERT INTO users (username, password,  email) VALUES ('${newUser_username}', '${newUser_password}','${newUser_email}')`;
 
-    //Insert Data into Databaes
+    //Insert Data into Database
     connection.query(userCreateQuery, (err, result) => {
 
         if (err) throw(err);

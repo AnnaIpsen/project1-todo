@@ -12,10 +12,6 @@ router.get('/', task_controller.task_list, function(req, res, next) {
 });
 
 
-
-// GET request for creating a task. NOTE This must come before routes that display task (uses id).
-router.get("/task/create", task_controller.task_create_get);
-
 // POST request for creating task.
 router.post("/task/create", task_controller.task_create_post);
 

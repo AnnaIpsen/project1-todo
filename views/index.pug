@@ -80,7 +80,7 @@ block content
         section(class="dueDatePriorityWrapper")
           div(class="priority")
             img(src="../images/icons/flag_red.svg")
-          form(class="date")
+          form( class="date")
             label(for="dueDate") Due date:
             input(type="date" name="dueDate")
         div(class="dropdownState")
@@ -91,7 +91,7 @@ block content
             p(class="todo dropdownItem") to do
             p(class="inProgress dropdownItem") in progress
             p(class="complete dropdownItem") complete
-      form(class="description")
+      form( class="description")
         label(for="description") Description:
         textarea(name="description" rows="20" cols="50")
       section(class="submitarea")
@@ -102,14 +102,14 @@ block content
       h1 Create new task
         hr
       section(class="namePriorityWrapper")
-        form(class="taskName")
+        form(action="/task/create" class="taskName" id="newTask_TaskName" )
           label(for="name") Task name
           input(name="name" type="text")
         div(class="priority")
           img(src="../images/icons/flag_white.svg")
       section(class="dateStateRow")
         section(class="dueDateWrapper")
-          form(class="date newDate")
+          form(caction="/task/create" lass="date newDate")
             label(for="dueDate") Due date:
             input(type="date" name="dueDate")
 
@@ -125,4 +125,4 @@ block content
         label(for="description") Description:
         textarea(name="description" rows="20" cols="50")
       section(class="submitarea")
-        button(class="btn" id="addTask") add task
+        input(type="submit" class="btn" id="addTask" value="add task")
