@@ -29,7 +29,7 @@ router.post("/login",
     let hashedLoginPassword = crypto.SHA256(loginPassword + salt).toString();
 
     if(saltetLoginUsername === loginUsername && hashedLoginPassword === loginPassword){
-        return res.render("taskOveriew");
+        return res.render("taskOverview");
     }else {
         return res.status(400).json({error:'Invalid username and password'})
     }
