@@ -6,15 +6,8 @@ let mysql = require('mysql');
 const task_controller = require("../controller/taskController.js");
 
 
-const connection = mysql.createConnection({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_DBNAME
-});
-
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', task_controller.task_list, function(req, res, next) {
   res.render('index', { title: 'TurTur-do' });
 });
 
@@ -42,9 +35,9 @@ router.post("/task/:id/update", task_controller.task_update_post);
 router.get("/task/:id", task_controller.task_detail);
 
 // GET request for list of all task items.
-router.get("/task", task_controller.task_list);
+router.get("/", task_controller.task_list);
 
-//NEW TASK - Trigger task_create_post
+
 
 
 module.exports = router;

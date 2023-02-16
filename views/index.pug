@@ -126,18 +126,3 @@ block content
         textarea(name="description" rows="20" cols="50")
       section(class="submitarea")
         button(class="btn" id="addTask") add task
-
-
-
-
-            app.post('/user',
-                body('username').isEmail(),
-                body('password').isLength({ min: 5 }).,
-                body('password').isEmail(),
-
-(req, res) => {
-// Finds the validation errors in this request and wraps them in an object with handy functions
-const errors = validationResult(req);
-if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-}

@@ -25,22 +25,29 @@ exports.task_detail = (req, res) => {
 };
 
 
-// Display task create form on GET.
-exports.task_create_get = (req, res) => {
-    res.send("NOT IMPLEMENTED: task create GET");
-};
-
 // Handle task create on POST.
 exports.task_create_post = (req, res) => {
-    connection.connect();
-    console.log("Creating new task")
-    //Query to insert task into database
-    let newTaskQuery = 'INSERT INTO '
-
-    connection.quety
-
-
-    res.send("NOT IMPLEMENTED: task create POST");
+    console.log(req.body)
+    //Variables to hold body properties
+    // const newTask_TaskName = req.body.TaskName;
+    // const newTask_TaskDescription = req.body.password;
+    // const newTask_TaskState = req.body.email;
+    // const newTask_TaskPriority = req.body.email;
+    //
+    // //Make connection to Database
+    // connection.connect();
+    //
+    // //Query to insert all user data into Database
+    // let taskCreateQuery = `INSERT INTO tasks (TaskName, TaskDescription,  TaskState, TaskPriority) VALUES ('${newTask_TaskName}', '${newTask_TaskDescription}','${newTask_TaskState}', '${newTask_TaskPriority}')`;
+    //
+    // //Insert Data into Databaes
+    // connection.query(userCreateQuery, (err, result) => {
+    //
+    //     if (err) throw(err);
+    //     res.render("createUser");
+    //
+    // })
+    // connection.end();
 };
 
 // Display task delete form on GET.
