@@ -29,6 +29,14 @@ router.post("/create",
         return res.status(400).json({errors: errors.array()});
       }
 
+      const confirmPass = req.body.confirmPass;
+      let password = req.body.password;
+
+      if(password !== confirmPass){
+        throw new Error('password is not the same')
+        return
+      }
+
       const newUser_username = req.body.username;
       const newUser_password = req.body.password;
       const newUser_email = req.body.email;
@@ -56,6 +64,7 @@ router.post("/create",
 
 
       });
+      connection.end();
     })
 
   module.exports = router;
