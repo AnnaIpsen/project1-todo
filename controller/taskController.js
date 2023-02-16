@@ -29,10 +29,10 @@ exports.task_detail = (req, res) => {
 exports.task_create_post = (req, res) => {
     console.log(req.body)
     //Variables to hold body properties
-    // const newTask_TaskName = req.body.TaskName;
+    // const newTask_TaskName = req.body.task;
     // const newTask_TaskDescription = req.body.password;
     // const newTask_TaskState = req.body.email;
-    // const newTask_TaskPriority = req.body.email;
+    // const newTask_TaskPriority = req.body.priority;
     //
     // //Make connection to Database
     // connection.connect();
@@ -40,7 +40,7 @@ exports.task_create_post = (req, res) => {
     // //Query to insert all user data into Database
     // let taskCreateQuery = `INSERT INTO tasks (TaskName, TaskDescription,  TaskState, TaskPriority) VALUES ('${newTask_TaskName}', '${newTask_TaskDescription}','${newTask_TaskState}', '${newTask_TaskPriority}')`;
     //
-    // //Insert Data into Databaes
+    // //Insert Data into Database
     // connection.query(userCreateQuery, (err, result) => {
     //
     //     if (err) throw(err);
