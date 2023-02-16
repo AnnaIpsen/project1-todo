@@ -25,12 +25,13 @@ html
       section(class="newListModal")
         h1 Create new list
           hr
-        section(class="contentNewList")
-          form(class="listName")
-            label(for="listName") Task name
-            input(name="listName" type="text")
-          button(class="btn" id="addList") add list
+        form
+          section(class="contentNewList")
+            div(class="listName")
+              label(for="listName") Task name
+              input(name="listName" type="text")
+            input(class="btn" id="addList" type="submit" value="add list")
 
     block content
 
-  script(src="../javascripts/index.js")
+  script(src="../javascripts/taskOverview.js")

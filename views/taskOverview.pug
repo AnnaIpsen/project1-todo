@@ -103,53 +103,57 @@ block content
     section(class="taskModal")
       h1 taskname
         hr
-      section(class="dueDateRow")
-        section(class="dueDatePriorityWrapper")
-          div(class="priority")
-            img(src="../images/icons/flag_red.svg")
-          form( class="date")
-            label(for="dueDate") Due date:
-            input(type="date" name="dueDate")
-        div(class="dropdownState")
-          section(class="complete changeState" id="openTaskStateDropdown")
-            p complete
-            img(src="../images/icons/arrow_dark.svg")
-          section(class="dropdownContent complete" id="taskStateDropdown")
-            p(class="todo dropdownItem") to do
-            p(class="inProgress dropdownItem") in progress
-            p(class="complete dropdownItem") complete
-      form( class="description")
-        label(for="description") Description:
-        textarea(name="description" rows="20" cols="50")
-      section(class="submitarea")
-        button(class="btn" id="updateTask") Save Task
+      form
+        section(class="dueDateRow")
+          section(class="dueDatePriorityWrapper")
+            div(class="priority")
+              img(src="../images/icons/flag_red.svg")
+            div(class="date")
+              label(for="dueDate") Due date:
+              input(type="date" name="dueDate")
+          div(class="dropdownState")
+            section(class="complete changeState" id="openTaskStateDropdown")
+              p complete
+              img(src="../images/icons/arrow_dark.svg")
+            section(class="dropdownContent complete" id="taskStateDropdown")
+              p(class="todo dropdownItem") to do
+              p(class="inProgress dropdownItem") in progress
+              p(class="complete dropdownItem") complete
+        div(class="description")
+          label(for="description") Description:
+          textarea(name="description" rows="20" cols="50")
+        section(class="submitarea")
+          input(class="btn" id="updateTask" type="submit" value="Save Task")
+
 
   section(id="newTaskModalWrapper")
     section(class="taskModal")
       h1 Create new task
         hr
-      section(class="namePriorityWrapper")
-        form(action="/task/create", method="post", class="taskName", id="newTask_TaskName" )
-          label(for="name") Task name
-          input(name="name" type="text")
-        div(class="priority")
-          img(src="../images/icons/flag_white.svg")
-      section(class="dateStateRow")
-        section(class="dueDateWrapper")
-          form(action="/task/create", method="post", class="date newDate")
-            label(for="dueDate") Due date:
-            input(type="date" name="dueDate")
+      form(action="/task/create", method="post")
+        section(class="namePriorityWrapper")
+          div(class="taskName")
+            label(for="name") Task name
+            input(name="name" type="text")
+          div(class="priority")
+            img(src="../images/icons/flag_white.svg")
+        section(class="dateStateRow")
+          section(class="dueDateWrapper")
+            div(class="date newDate")
+              label(for="dueDate") Due date:
+              input(type="date" name="dueDate")
 
-        div(class="dropdownStateNewTask")
-          section(class="complete changeState newTask" id='openNewTaskStateDropdown')
-            p complete
-            img(src="../images/icons/arrow_dark.svg")
-          section(class="dropdownContent complete" id="newTaskStateDropdown")
-            p(class="todo dropdownItem") to do
-            p(class="inProgress dropdownItem") in progress
-            p(class="complete dropdownItem") complete
-      form(action="/task/create", method="post", class="description")
-        label(for="description") Description:
-        textarea(name="description" rows="20" cols="50")
-      section(class="submitarea")
-        input(type="submit" class="btn" id="addTask" value="add task")
+          div(class="dropdownStateNewTask")
+            section(class="complete changeState newTask" id='openNewTaskStateDropdown')
+              p complete
+              img(src="../images/icons/arrow_dark.svg")
+            section(class="dropdownContent complete" id="newTaskStateDropdown")
+              p(class="todo dropdownItem") to do
+              p(class="inProgress dropdownItem") in progress
+              p(class="complete dropdownItem") complete
+        div(class="description")
+          label(for="description") Description:
+          textarea(name="description" rows="20" cols="50")
+        section(class="submitarea")
+          input(type="submit" class="btn" id="addTask" value="add task")
+

@@ -8,7 +8,7 @@ const task_controller = require("../controller/taskController.js");
 
 /* GET home page. */
 router.get('/', task_controller.task_list, function(req, res, next) {
-  res.render('index', { title: 'TurTur-do' });
+  res.render('taskOverview', { title: 'TurTur-do' });
 });
 
 
