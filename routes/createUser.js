@@ -22,7 +22,7 @@ router.post("/create", user_controller.user_create_post);
 //  (req, res) =>{
 //
 //   // body("username", "not valid").isLength({min: 6}).escape(),
-//   // body("password", "not valid").isLength({min: 6}).escape()
+//   // body("password", "nogt valid").isLength({min: 6}).escape()
 //   const errors = validationResult(req);
 //     if (!errors.isEmpty()) {
 //       console.log(errors);
