@@ -20,30 +20,19 @@ router.post("/login",
       return res.status(400).json({ errors: errors.array() });
     }
 
-    let loginUsername = req.body.loginUsername;
-    let loginPassword = req.body.loginPassword;
+    const loginUsername = req.body.loginUsername;
+    const loginPassword = req.body.loginPassword;
 
-    User.findOne({ loginUsername, loginEmail })
-    .then(user => {
-        if (!user) return res.status(400).json({ msg: "User not exist" })
+    let salt = crypto.lib.WordArray.random(128 / 8).toString();
 
-        //if user exist than compare password
-        //password comes from the user
-        //user.password comes from the database
-        crypto.compare(loginUsername, user.username, loginPassword, user.password, (err, data) => {
-            //if error than throw error
-            if (err) throw err
+    let saltetLoginUsername = (loginUsername + salt).toString();
+    let hashedLoginPassword = crypto.SHA256(loginPassword + salt).toString();
 
-            //if both match than you can do anything
-            if (data) {
-                return res.status(200).json({ msg: "Login success" })
-            } else {
-                return res.status(401).json({ msg: "Invalid credencial" })
-            }
-            
-        });
-        res.render("taskOverview")
-    });
+    if(saltetLoginUsername === loginUsername && hashedLoginPassword === loginPassword){
+        return res.render("taskOveriew");
+    }else {
+        return res.status(400).json({error:'Invalid username and password'})
+    }
 
 
 
