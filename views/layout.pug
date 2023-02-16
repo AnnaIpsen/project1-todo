@@ -13,13 +13,23 @@ html
         hr
         ul
           li some list
-        div(class="btn" id="addNewList")
+        button(class="btn" id="addNewList")
           img(src="../images/icons/plus.svg")
           p new list
 
       div(id="userInfo")
         div(class="userLogo")
           img(src="../images/icons/user.svg")
+
+    section(id="newListModalWrapper")
+      section(class="newListModal")
+        h1 Create new list
+          hr
+        section(class="contentNewList")
+          form(class="listName")
+            label(for="listName") Task name
+            input(name="listName" type="text")
+          button(class="btn" id="addList") add list
 
     block content
 
