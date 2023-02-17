@@ -27,34 +27,8 @@ block content
                 div(class="dueDate")
                   img(src="../images/icons/flag_white.svg")
                   p #{task.TaskDueDate}
-      div(class="todoCard" id="openModal")
-        section
-          section(class="cardHeader")
-            h4 Taskname
-            div(class="dropdownStateCard")
-              section(class="todo changeState" id='openCardStateDropdown')
-                p to do
-                img(src="../images/icons/arrow_dark.svg")
-              section(class="dropdownContent cardState todo" id="cardStateDropdown")
-                p(class="todo dropdownItem") to do
-                p(class="inProgress dropdownItem") in progress
-                p(class="complete dropdownItem") complete
 
-          p(class="description") description here
-        div(class="dueDate")
-          img(src="../images/icons/flag_white.svg")
-          p due date
-      div(class="todoCard")
-        section
-          section(class="cardHeader")
-            h4 Taskname
-            section(class="todo changeState")
-              p to do
-              img(src="../images/icons/arrow_dark.svg")
-          p(class="description") description here
-        div(class="dueDate")
-          img(src="../images/icons/flag_red.svg")
-          p #{task.TaskDueDate}
+
 
     section(class="todosColumn")
       div(class="stateBox inProgress")
@@ -73,7 +47,7 @@ block content
                       p(class="description") #{task.TaskDescription}
                   div(class="dueDate")
                       img(src="../images/icons/flag_white.svg")
-                      p due date
+                      p #{task.TaskDueDate}
 
 
     section(class="todosColumn")

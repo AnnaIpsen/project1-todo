@@ -8,7 +8,7 @@ const task_controller = require("../controller/taskController.js");
 
 /* GET home page. */
 router.get('/', task_controller.task_list, function(req, res, next) {
-  res.render('index', { title: 'TurTur-do' });
+  res.render('taskOverview', { title: 'TurTur-do' });
 });
 
 
@@ -28,7 +28,9 @@ router.get("/task/:id/update", task_controller.task_update_get);
 router.post("/task/:id/update", task_controller.task_update_post);
 
 // GET request for one task.
-router.get("/task/:id", task_controller.task_detail);
+router.get("/task/id", task_controller.task_details, function(err,results){
+  results.render("taskOverview");
+});
 
 // GET request for list of all task items.
 router.get("/", task_controller.task_list);

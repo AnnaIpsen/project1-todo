@@ -10,10 +10,11 @@ const connection = mysql.createConnection({
 // Display list of all tasks.
 exports.task_list = (req, res) => {
     console.log("Fetching data...");
-    let queryTest = 'SELECT * FROM tasks'
-    connection.query(queryTest, (err, result) => {
+    let getAllTasksQuery = 'SELECT * FROM tasks'
+    connection.query(getAllTasksQuery, (err, result) => {
         if (err) throw(err);
-        res.render("index", {task_list: result})
+        console.log("This is the Task objects: " + result[0].TaskDueDate)
+        res.render("taskOverview", {task_list: result})
     })
 }
 
@@ -39,9 +40,23 @@ exports.task_create_post = (req, res) => {
     //Insert Data into Database
     connection.query(taskCreateQuery, (err, result) => {
         if (err) throw(err);
-        res.redirect("localhost:8080/");
+        res.redirect("localhost:8080/taskOverview");
     })
 };
+
+exports.task_details = (req,res) => {
+    console.log("Details Triggered")
+    console.log("Details Req: " + req)
+
+    //Query to select specific tasks
+    let taskDetailQuery = 'SELECT * FROM tasks WHERE TaskID = ?'
+
+    connection.query(taskDetailQuery, [req.body.TaskID], (err,res) => {
+        console.log(res);
+        res.render("taskOverview")
+    })
+
+}
 
 // Display task delete form on GET.
 exports.task_delete_get = (req, res) => {

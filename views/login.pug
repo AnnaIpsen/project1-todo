@@ -3,30 +3,30 @@ doctype html
 html
     head
         link(rel='stylesheet', href='/stylesheets/login.css')
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js")
+        //script(src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js")
     body
         div(class='logoWrapper')
             img(src='../images/logo.png' alt='login-img')
         div
             div(class='loginWrapper')
                 h1(class='h1 welcome') WELCOME TO TURTUR-DO!
-                form(action="/login" class="loginForm")
+                form(action="/login/" class="loginForm" method="post")
                     label(class='loginLabel') LOGIN
                     input(id='loginUsername' class="inputLogin" name='loginUsername')
                     input(id='loginPassword' class="inputLogin" name='loginPassword')
                     p(class='h3 signUpTxt') Not a member? No worries - <a href="/createUser" class='linkToCreate'> Sign up here </a>
-                    button(id='loginBtn' class='h2') login
+                    input(type="submit", id='loginBtn' class='h2', value="login")
 
-script.
-    let loginBtn = document.getElementById("loginBtn");
-    let password = document.getElementById("loginPassword");
-
-    loginBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        let passwordValue = (password.value);
-
-        let hash = CryptoJS.SHA256(passwordValue);
-        console.log(hash);
-        console.log(passwordValue);
-        console.log(hash.toString());
-    });
+//script.
+//    let loginBtn = document.getElementById("loginBtn");
+//    let password = document.getElementById("loginPassword");
+//
+//    loginBtn.addEventListener("click", function (event) {
+//        event.preventDefault();
+//        let passwordValue = (password.value);
+//
+//        let hash = CryptoJS.SHA256(passwordValue);
+//        console.log(hash);
+//        console.log(passwordValue);
+//        console.log(hash.toString());
+//    });
