@@ -33,6 +33,13 @@ router.post("/login",
     let loginUsername = req.body.loginUsername;
     let loginPassword = req.body.loginPassword;
 
+     let salt = crypto.lib.WordArray.random(128 / 8).toString();
+
+     let saltetLoginUsername = (loginUsername + salt).toString();
+     let hashedLoginPassword = crypto.SHA256(loginPassword + salt).toString();
+
+
+
     // First check if there's a match on username in database,
      // If yes, then get saltkey
      let saltKeyQuery = "SELECT saltKey FROM users WHERE Username = ?";
@@ -54,6 +61,16 @@ router.post("/login",
          console.log(res);
      }
 
+     //Forth, if there's a match, user will be logged in
+     if(saltetLoginUsername === loginUsername && hashedLoginPassword === loginPassword){
+         return res.render("taskOverview");
+     }else {
+         return res.status(400).json({error:'Invalid username and password'})
+
+
+
+         const loginUsername = req.body.loginUsername;
+     const loginPassword = req.body.loginPassword;
 
 
 

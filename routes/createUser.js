@@ -4,6 +4,7 @@ let mysql = require("mysql");
 
 const connection = mysql.createConnection({
     host: process.env.DATABASE_HOST,
+    port: process.env.DATABASE_PORT,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE_DBNAME
@@ -27,6 +28,14 @@ router.post("/create",
       if (!errors.isEmpty()) {
         console.log(errors);
         return res.status(400).json({errors: errors.array()});
+      }
+
+      const confirmPass = req.body.confirmPass;
+      let password = req.body.password;
+
+      if(password !== confirmPass){
+        throw new Error('password is not the same')
+        return
       }
 
       const newUser_username = req.body.username;
@@ -54,6 +63,7 @@ router.post("/create",
 
 
       });
+      connection.end();
     })
 
   module.exports = router;
