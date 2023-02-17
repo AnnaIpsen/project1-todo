@@ -46,7 +46,8 @@ router.post("/create",
       connection.connect();
 
       //Query to insert all user data into Database
-      let userCreateQuery = `INSERT INTO users (username, password,  email, saltKey) VALUES ('${saltUsername}', '${hashedPassword}','${newUser_email}','${salt}')`;
+      let userCreateQuery = `INSERT INTO users (username, password,  email, saltKey) 
+      VALUES ('${saltUsername}', '${hashedPassword}','${newUser_email}','${salt}')`;
 
       //Insert Data into Database
       connection.query(userCreateQuery, (err, result) => {

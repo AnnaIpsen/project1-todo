@@ -292,6 +292,7 @@ changeState {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: 1rem;
 }
 .btn {
   background-color: var(--button-red);
